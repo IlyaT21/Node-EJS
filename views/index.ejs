@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .message {
+        margin-bottom: 10px;
+      }
+      .user {
+        font-weight: bold;
+      }
+      .date {
+        color: gray;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Messages</h1>
+    <div>
+      <% messages.forEach(message => { %>
+      <div class="message">
+        <p>
+          <span class="user"><%= message.user %>:</span> <%= message.text %>
+        </p>
+        <p class="date"><%= message.added.toLocaleString() %></p>
+      </div>
+      <% }); %>
+    </div>
+    <a href="/new">Add a new message</a>
+  </body>
+</html>
